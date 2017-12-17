@@ -10,4 +10,6 @@ public class OwmDataProcessor {
     private double windStat;
     private double cloudsStat;
 
+    //TODO
+    //Dodać logike rozmyta, definiujaca ubranie dla konkretnego elementu odziezy
 }
