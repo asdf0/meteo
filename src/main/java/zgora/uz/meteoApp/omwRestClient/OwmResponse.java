@@ -1,6 +1,7 @@
 package zgora.uz.meteoApp.omwRestClient;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import flexjson.JSONSerializer;
 import zgora.uz.meteoApp.model.*;
 
 @JsonIgnoreProperties
@@ -50,4 +51,5 @@ public class OwmResponse {
     public void setSnow(final Snow snow) {
         this.snow = snow;
     }
+
 }

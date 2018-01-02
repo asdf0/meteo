@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Forecast for given city</title>
+</head>
+<body>
+<div class="description">
+    <p>Forecast for city: <span th:text="${cityName}">cityName</span>
+    </p>
+</div>
+<div class="forecastNumbers">
+    <span th:utext="${forecastJson}">forecastJson</span>
+</div>
+<div class="outfitImages">
+    <img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat"/>
+</div>
+</body>
+</html>

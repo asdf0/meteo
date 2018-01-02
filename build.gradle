@@ -24,7 +24,10 @@ repositories {
 
 
 dependencies {
-	compile ("org.springframework.boot:spring-boot-starter-web")
+//	compile ("org.springframework.boot:spring-boot-starter-web")
+	compile ("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile('org.springframework.boot:spring-boot-starter')
+    compile('net.sf.flexjson:flexjson:3.3')
+//	compile('spring-boot-starter-security')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

@@ -9,19 +9,16 @@ import org.springframework.web.bind.annotation.RestController;
 import zgora.uz.meteoApp.omwRestClient.OwmResponse;
 import zgora.uz.meteoApp.omwRestClient.omwRestClient;
 
-@RestController
-public class omwController {
+@RestController //TODO worthless ?
+@RequestMapping("/api")
+public class OmwController {
 
     @Autowired
     omwRestClient omwRestClient;
 
-    @RequestMapping("/{cityName}")
+    @RequestMapping("/{cityName}") //TODO ad api path
     public OwmResponse index(@PathVariable String cityName){
         return omwRestClient.getOwmResponse(cityName);
     }
-//
-//    @RequestMapping("/")
-//    public OwmResponse index(){
-//        return omwRestClient.getOwmResponse("London");
-//    }
+
 }
