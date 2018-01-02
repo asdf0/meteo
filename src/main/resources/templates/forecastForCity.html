@@ -2,18 +2,71 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/searchPage.css}"></link>
     <title>Forecast for given city</title>
 </head>
 <body>
-<div class="description">
-    <p>Forecast for city: <span th:text="${cityName}">cityName</span>
-    </p>
+<div id="description" class="jumbotron text-center">
+    <h1>Forecast for city: <span th:text="${cityName}">cityName</span>
+    </h1>
 </div>
-<div class="forecastNumbers">
-    <span th:utext="${forecastJson}">forecastJson</span>
-</div>
-<div class="outfitImages">
-    <img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat"/>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span class="navbar-brand">Outfit advisor</span>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">HOME</a> </li>
+            <li><a href="#">INSTRUCTIONS</a> </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Most popular cities
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="getForecastForCity?cityName=London">London</a></li>
+                    <li><a href="getForecastForCity?cityName=Warsaw">Warsaw</a></li>
+                    <li><a href="getForecastForCity?cityName=Mexico">Mexico</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div id="forecastNumbers" class="col-md-6">
+            <span th:utext="${forecastJson}">forecastJson</span>
+        </div>
+        <div id="outfitImages" class="col-md-6">
+            <div id="headSection" class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
+                <div class="col-xs-3"></div>
+            </div>
+            <div id="middleSection" class="row">
+                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
+                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
+                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
+            </div>
+            <div id="bottomSection" class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div id="bootSection" class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
+                <div class="col-sm-3"></div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

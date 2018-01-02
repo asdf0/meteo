@@ -1,20 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"></meta>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/searchPage.css}"></link>
     <title>Home</title>
 </head>
 <body>
-<h1>HomePage</h1>
+<div id="description" class="jumbotron text-center">
+    <h1>Home page
+    </h1>
+</div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <span class="navbar-brand">Outfit advisor</span>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">HOME</a> </li>
+            <li><a href="#">INSTRUCTIONS</a> </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Most popular cities
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="getForecastForCity?cityName=London">London</a></li>
+                    <li><a href="getForecastForCity?cityName=Warsaw">Warsaw</a></li>
+                    <li><a href="getForecastForCity?cityName=Mexico">Mexico</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="searchBox">
 <p>Enter city name</p>
 <form action="/getForecastForCity" method="get">
     <input type="text" name="cityName"></input>
     <input type="submit" value="getForecast"></input>
 </form>
+</div>
 <li>
     <td>dummy1</td>
     <td>dummy2</td>
     <td>dummy3</td>
 </li>
 </body>
+<footer>Powered by OpenWeatherMap</footer>
 </html>

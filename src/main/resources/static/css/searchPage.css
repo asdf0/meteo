@@ -1,0 +1,19 @@
+#outfitImages img{
+    height:80%;
+    width: 80%;
+}
+
+#description {
+    font-size: medium;
+    font-family: Lato;
+    margin-bottom: auto;
+}
+
+#forecastNumbers {
+    font-size: medium;
+    font-family: Lato;
+}
+
+/*.navigation {*/
+    /*color: palevioletred;*/
+/*}*/
