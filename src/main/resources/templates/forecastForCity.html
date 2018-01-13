@@ -45,28 +45,12 @@
             <span th:utext="${forecastJson}">forecastJson</span>
         </div>
         <div id="outfitImages" class="col-md-6">
-            <div id="headSection" class="row">
-                <div class="col-xs-3"></div>
-                <div class="col-xs-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
-                <div class="col-xs-3"></div>
-            </div>
-            <div id="middleSection" class="row">
-                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
-                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
-                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
-            </div>
-            <div id="bottomSection" class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
-                <div class="col-sm-3"></div>
-            </div>
-            <div id="bootSection" class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-3"><img th:src="@{${'/images/' + hatCode + '.jpg'}}" title="hat" class="img-responsive"/></div>
-                <div class="col-sm-3"></div>
-            </div>
+            <div id="image">
+                <div class="col-md-3"><p><strong>Suggested item:</strong></p></div>
+                <div class="col-md-9"><img th:src="@{${'/images/' + itemCode + '.jpg'}}" title="suggestedItem" class="img-responsive"/></div>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>

@@ -2,14 +2,20 @@ package zgora.uz.meteoApp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import static org.codehaus.groovy.runtime.DefaultGroovyMethods.round;
+
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Main {
-private double temp;
-private int humidity;
-private double pressure;
+    private final static Double KELVIN_TO_CELSIUS_DIFFERENCE =273.15;
+
+    private double temp;
+    private int humidity;
+    private double pressure;
+
 
     public double getTemp() {
-        return temp;
+        return round(temp-KELVIN_TO_CELSIUS_DIFFERENCE,1);
     }
 
     public void setTemp(double temp) {

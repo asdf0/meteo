@@ -26,11 +26,14 @@ public class omwRestClient {
         return this.restTemplate.getForObject(this.url, OwmResponse.class, cityId, this.apiKey);
     }
 
-    public String getFormattedJsonResponse(final  String cityId) throws JsonProcessingException {
-        OwmResponse response= getOwmResponse(cityId);
+    public String getFormattedJsonResponse(OwmResponse response) throws JsonProcessingException {
         ObjectMapper mapper= new ObjectMapper();
         String json=mapper.writeValueAsString(response);
         return pretifyResponse(json);
+    }
+
+    public ResponseToProcess getResponseToProcess(OwmResponse response){
+        return new ResponseToProcess(response.getMain().getTemp(),response.getMain().getHumidity(), response.getMain().getPressure());
     }
 
     private String pretifyResponse (final String input){
@@ -42,6 +45,8 @@ public class omwRestClient {
         response= response.replaceAll("snow:","<strong>snow:</strong><br>");
         response= response.replaceAll("null","0");
         response= response.replaceAll(",","<br>");
+
+        //TODO replaceAll values  with values+ unit
 
         return response;
     }
