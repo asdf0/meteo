@@ -10,13 +10,14 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom css stylesheet -->
     <link rel="stylesheet" th:href="@{/css/searchPage.css}"></link>
     <title>Home</title>
 </head>
 <body>
 <div id="description" class="jumbotron text-center">
-    <h1>Home page
-    </h1>
+    <h1>Weather assistant</h1>
 </div>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -27,29 +28,54 @@
             <li><a href="/">HOME</a> </li>
             <li><a href="#">INSTRUCTIONS</a> </li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Most popular cities
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Biggest cities of the world
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="getForecastForCity?cityName=Chongqing">Chongqing</a></li>
+                    <li><a href="getForecastForCity?cityName=Shanghai">Shanghai</a></li>
+                    <li><a href="getForecastForCity?cityName=Delhi">Delhi</a></li>
+                    <li><a href="getForecastForCity?cityName=Beijing">Beijing</a></li>
+                    <li><a href="getForecastForCity?cityName=Mumbai">Mumbai</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Biggest capitals in EU
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="getForecastForCity?cityName=London">London</a></li>
+                    <li><a href="getForecastForCity?cityName=Berlin">Berlin</a></li>
+                    <li><a href="getForecastForCity?cityName=Madrid">Madrid</a></li>
+                    <li><a href="getForecastForCity?cityName=Rome">Rome</a></li>
+                    <li><a href="getForecastForCity?cityName=Paris">Paris</a></li>
+                    <li><a href="getForecastForCity?cityName=Bucharest">Bucharest</a></li>
+                    <li><a href="getForecastForCity?cityName=Vienna">Vienna</a></li>
+                    <li><a href="getForecastForCity?cityName=Budapest">Budapest</a></li>
                     <li><a href="getForecastForCity?cityName=Warsaw">Warsaw</a></li>
-                    <li><a href="getForecastForCity?cityName=Mexico">Mexico</a></li>
+                    <li><a href="getForecastForCity?cityName=Prague">Prague</a></li>
+                    <li><a href="getForecastForCity?cityName=Sofia">Sofia</a></li>
+                    <li><a href="getForecastForCity?cityName=Brussels">Brussels</a></li>
+                    <li><a href="getForecastForCity?cityName=Stockholm">Stockholm</a></li>
+                    <li><a href="getForecastForCity?cityName=Amsterdam">Amsterdam</a></li>
                 </ul>
             </li>
         </ul>
     </div>
 </nav>
-<div id="searchBox">
-<p>Enter city name</p>
+
+<div id="searchBox" class="container text-center">
+<div class="row">
+    <p><strong>Enter city name:</strong></p>
+</div>
+    <div class="row">
 <form action="/getForecastForCity" method="get">
     <input type="text" name="cityName"></input>
-    <input type="submit" value="getForecast"></input>
+    <input type="submit" value="get advice"></input>
 </form>
+    </div>
 </div>
-<li>
-    <td>dummy1</td>
-    <td>dummy2</td>
-    <td>dummy3</td>
-</li>
 </body>
-<footer>Powered by OpenWeatherMap</footer>
+<footer class="text-center">
+    <div class="row" ><p><em> Authors: Grzegorz Orwat and Mateusz Grobelny</em></p></div>
+    <div class="row" ><p><em> Powered by Open weather map</em></p></div>
+</footer>
 </html>
