@@ -26,7 +26,6 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/">HOME</a> </li>
-            <li><a href="#">INSTRUCTIONS</a> </li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Biggest cities of the world
                     <span class="caret"></span></a>
@@ -61,21 +60,27 @@
         </ul>
     </div>
 </nav>
+<div class="" id="awan"></div>
+<div id="filler" class="container">
+    <div id="searchBox" class="text-center">
 
-<div id="searchBox" class="container text-center">
-<div class="row">
-    <p><strong>Enter city name:</strong></p>
-</div>
-    <div class="row">
-<form action="/getForecastForCity" method="get">
-    <input type="text" name="cityName"></input>
-    <input type="submit" value="get advice"></input>
-</form>
+        <p><strong>Enter city name:</strong></p>
+
+
+        <form action="/getForecastForCity" method="get">
+            <input type="text" name="cityName" class="input-lg"></input>
+            <br></br>
+            <button type="submit" class="btn-info btn-circle btn-xl" id="searchButton">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </form>
+
     </div>
 </div>
-</body>
-<footer class="text-center">
-    <div class="row" ><p><em> Authors: Grzegorz Orwat and Mateusz Grobelny</em></p></div>
-    <div class="row" ><p><em> Powered by Open weather map</em></p></div>
+<footer class="text-center ">
+    <p><em> Authors: Grzegorz Orwat and Mateusz Grobelny</em></p>
+    <p><em> Powered by Open weather map</em></p>
 </footer>
+</body>
+
 </html>

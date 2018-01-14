@@ -10,6 +10,8 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Custom css stylesheet -->
     <link rel="stylesheet" th:href="@{/css/searchPage.css}"></link>
     <title>Forecast for given city</title>
 </head>
@@ -25,14 +27,15 @@
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/">HOME</a> </li>
-            <li><a href="#">INSTRUCTIONS</a> </li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Most popular cities
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Biggest cities of the world
                     <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="getForecastForCity?cityName=London">London</a></li>
-                    <li><a href="getForecastForCity?cityName=Warsaw">Warsaw</a></li>
-                    <li><a href="getForecastForCity?cityName=Mexico">Mexico</a></li>
+                    <li><a href="getForecastForCity?cityName=Chongqing">Chongqing</a></li>
+                    <li><a href="getForecastForCity?cityName=Shanghai">Shanghai</a></li>
+                    <li><a href="getForecastForCity?cityName=Delhi">Delhi</a></li>
+                    <li><a href="getForecastForCity?cityName=Beijing">Beijing</a></li>
+                    <li><a href="getForecastForCity?cityName=Mumbai">Mumbai</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -58,6 +61,8 @@
         </ul>
     </div>
 </nav>
+<div class="" id="awan"></div>
+<div id="filler" class="container">
 
 <div class="container">
     <div class="row">
@@ -72,5 +77,17 @@
     </div>
 </div>
 </div>
+<div class="container" id="googleMaps">
+    <iframe width="100%" height="250px" frameborder="3"
+            th:src="@{${'//www.google.com/maps/embed/v1/place?q=' +cityName+
+            '&amp;key=AIzaSyBOP0XUQbyTq5Wa08wC-tpgqe-jEamtScw'}}">
+    </iframe>
+</div>
+</div>
+
 </body>
+<footer class="text-center ">
+    <p><em> Authors: Grzegorz Orwat and Mateusz Grobelny</em></p>
+    <p><em> Powered by Open weather map</em></p>
+</footer>
 </html>
